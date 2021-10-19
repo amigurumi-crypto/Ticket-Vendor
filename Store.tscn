@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://mrtfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Store.gd" type="Script" id=2]
+[ext_resource path="res://Match 3 Assets/left.png" type="Texture" id=3]
+[ext_resource path="res://Match 3 Assets/genericItem_color_067.png" type="Texture" id=4]
+[ext_resource path="res://Match 3 Assets/store.png" type="Texture" id=5]
+
+[node name="Store" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 576.0
+margin_bottom = 1024.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day" type="Label" parent="TextureRect"]
+margin_left = 160.0
+margin_top = 112.0
+margin_right = 375.0
+margin_bottom = 147.0
+custom_fonts/font = ExtResource( 1 )
+text = "Week 5 day 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 160.0
+margin_top = 224.0
+margin_right = 223.0
+margin_bottom = 259.0
+custom_fonts/font = ExtResource( 1 )
+text = "500"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GroceryLabel" type="Label" parent="TextureRect"]
+margin_left = 24.0
+margin_top = 296.0
+margin_right = 281.0
+margin_bottom = 369.0
+custom_fonts/font = ExtResource( 1 )
+text = "Groceries for 
+week 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GroceryButton" type="Button" parent="TextureRect"]
+margin_left = 432.0
+margin_top = 296.0
+margin_right = 542.0
+margin_bottom = 337.0
+custom_fonts/font = ExtResource( 1 )
+text = "600"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CostButton" type="Button" parent="TextureRect"]
+margin_left = 432.0
+margin_top = 424.0
+margin_right = 542.0
+margin_bottom = 465.0
+custom_fonts/font = ExtResource( 1 )
+text = "10000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="TextureRect"]
+margin_left = 72.0
+margin_top = 424.0
+margin_right = 257.0
+margin_bottom = 465.0
+custom_fonts/font = ExtResource( 1 )
+text = "Local V5"
+items = [ "Local V5", null, false, 0, null, "Imported V5", null, false, 1, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SmartphoneSprite" type="Sprite" parent="TextureRect"]
+position = Vector2( 40, 448 )
+texture = ExtResource( 4 )
+
+[node name="HouseOptionButton" type="OptionButton" parent="TextureRect"]
+margin_left = 72.0
+margin_top = 608.0
+margin_right = 244.0
+margin_bottom = 649.0
+custom_fonts/font = ExtResource( 1 )
+text = "parents"
+items = [ "parents", null, false, 0, null, "bedspace", null, false, 1, null, "studio", null, false, 2, null, "1 bedroom", null, false, 3, null ]
+selected = 0
+
+[node name="RentLabel" type="Label" parent="TextureRect"]
+margin_left = 24.0
+margin_top = 528.0
+margin_right = 175.0
+margin_bottom = 601.0
+custom_fonts/font = ExtResource( 1 )
+text = "Rent for
+month 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RentButton" type="Button" parent="TextureRect"]
+margin_left = 432.0
+margin_top = 608.0
+margin_right = 542.0
+margin_bottom = 649.0
+custom_fonts/font = ExtResource( 1 )
+text = "1500"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureRect/GroceryButton" to="." method="_on_GroceryButton_pressed"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureRect/CostButton" to="." method="_on_CostButton_pressed"]
+[connection signal="item_selected" from="TextureRect/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="TextureRect/HouseOptionButton" to="." method="_on_HouseOptionButton_item_selected"]
+[connection signal="pressed" from="TextureRect/RentButton" to="." method="_on_RentButton_pressed"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://Match 3 Assets/blue_panel.png" type="Texture" id=2]
+[ext_resource path="res://Match 3 Assets/arrowLeft.png" type="Texture" id=3]
+[ext_resource path="res://Match 3 Assets/arrowRight.png" type="Texture" id=4]
+[ext_resource path="res://mrtfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Match 3 Assets/pointer.png" type="Texture" id=6]
+[ext_resource path="res://forward.png" type="Texture" id=7]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TutorialBox" type="TextureRect" parent="."]
+margin_left = 152.0
+margin_top = 96.0
+margin_right = 472.0
+margin_bottom = 352.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialLabel" type="Label" parent="TutorialBox"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 121.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 5 )
+text = "The list of
+destinations and
+fares can be
+seen here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialLabel2" type="Label" parent="TutorialBox"]
+margin_left = 136.0
+margin_top = 200.0
+margin_right = 185.0
+margin_bottom = 235.0
+custom_fonts/font = ExtResource( 5 )
+text = "1/2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftButton" type="TextureButton" parent="TutorialBox"]
+margin_left = 72.0
+margin_top = 192.0
+margin_right = 122.0
+margin_bottom = 242.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightButton" type="TextureButton" parent="TutorialBox"]
+margin_left = 200.0
+margin_top = 192.0
+margin_right = 250.0
+margin_bottom = 242.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TextureButton" parent="TutorialBox"]
+visible = false
+margin_left = 248.0
+margin_top = 192.0
+margin_right = 298.0
+margin_bottom = 242.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer" type="Sprite" parent="."]
+position = Vector2( 152, 408 )
+texture = ExtResource( 6 )
+
+[node name="PointerTween" type="Tween" parent="Pointer"]
+repeat = true
+playback/repeat = true
+[connection signal="pressed" from="TutorialBox/LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="TutorialBox/RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="pressed" from="TutorialBox/StartButton" to="." method="_on_StartButton_pressed"]

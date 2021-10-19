@@ -1,0 +1,222 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Home.gd" type="Script" id=1]
+[ext_resource path="res://mrtfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Match 3 Assets/audioOn.png" type="Texture" id=3]
+[ext_resource path="res://Match 3 Assets/musicOn.png" type="Texture" id=4]
+[ext_resource path="res://Match 3 Assets/musicOff.png" type="Texture" id=5]
+[ext_resource path="res://Match 3 Assets/audioOff.png" type="Texture" id=6]
+[ext_resource path="res://Match 3 Assets/information.png" type="Texture" id=7]
+[ext_resource path="res://Match 3 Assets/blue_panel.png" type="Texture" id=8]
+[ext_resource path="res://Match 3 Assets/blue_boxCross.png" type="Texture" id=9]
+[ext_resource path="res://Match 3 Assets/shoppingBasket.png" type="Texture" id=10]
+[ext_resource path="res://Match 3 Assets/medal2.png" type="Texture" id=11]
+[ext_resource path="res://Match 3 Assets/launch.png" type="Texture" id=12]
+
+[node name="Home" type="Node2D"]
+script = ExtResource( 1 )
+music_on = ExtResource( 4 )
+music_off = ExtResource( 5 )
+sound_on = ExtResource( 3 )
+sound_off = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+modulate = Color( 1, 1, 1, 0.494118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 208.0
+margin_top = 256.0
+margin_right = 381.0
+margin_bottom = 297.0
+custom_fonts/font = ExtResource( 2 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BkgMusicButton" type="TextureButton" parent="TextureRect"]
+margin_left = 232.0
+margin_top = 312.0
+margin_right = 332.0
+margin_bottom = 412.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundsButton" type="TextureButton" parent="TextureRect"]
+margin_left = 240.0
+margin_top = 432.0
+margin_right = 340.0
+margin_bottom = 532.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="creditsButton" type="TextureButton" parent="TextureRect"]
+margin_left = 240.0
+margin_top = 544.0
+margin_right = 340.0
+margin_bottom = 644.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopButton" type="TextureButton" parent="TextureRect"]
+margin_left = 336.0
+margin_top = 640.0
+margin_right = 436.0
+margin_bottom = 740.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopButton2" type="TextureButton" parent="TextureRect"]
+margin_left = 144.0
+margin_top = 640.0
+margin_right = 244.0
+margin_bottom = 740.0
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 200.0
+margin_top = 544.0
+margin_right = 240.0
+margin_bottom = 584.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsRect" type="TextureRect" parent="Popup"]
+margin_left = -32.0
+margin_top = -104.0
+margin_right = 224.0
+margin_bottom = 216.0
+mouse_filter = 0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="CreditsClose" type="TextureButton" parent="Popup"]
+margin_left = 80.0
+margin_top = 160.0
+margin_right = 120.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Popup"]
+margin_left = 32.0
+margin_top = -88.0
+margin_right = 164.0
+margin_bottom = -53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Names" type="Label" parent="Popup"]
+margin_left = -8.0
+margin_top = -32.0
+margin_right = 138.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Developed by: Chicken
+
+Music: Mark Sparling
+
+Sound Effects and 
+Art Assets: Kenney.nl"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Popup" parent="."]
+margin_left = 200.0
+margin_top = 544.0
+margin_right = 240.0
+margin_bottom = 584.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsRect" type="TextureRect" parent="Stats"]
+margin_left = -32.0
+margin_top = -104.0
+margin_right = 224.0
+margin_bottom = 216.0
+mouse_filter = 0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="CreditsClose" type="TextureButton" parent="Stats"]
+margin_left = 80.0
+margin_top = 160.0
+margin_right = 120.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Stats"]
+margin_left = 48.0
+margin_top = -88.0
+margin_right = 145.0
+margin_bottom = -53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Stats"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Names" type="Label" parent="Stats"]
+margin_left = -8.0
+margin_top = -32.0
+margin_right = 138.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Days Worked: 8
+
+Customers Served: 51
+
+Total Earned: 612
+
+Current Wage: 612
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TextureRect/BkgMusicButton" to="." method="_on_BkgMusicButton_pressed"]
+[connection signal="pressed" from="TextureRect/SoundsButton" to="." method="_on_SoundsButton_pressed"]
+[connection signal="pressed" from="TextureRect/creditsButton" to="." method="_on_creditsButton_pressed"]
+[connection signal="pressed" from="TextureRect/ShopButton" to="." method="_on_ShopButton_pressed"]
+[connection signal="pressed" from="TextureRect/ShopButton2" to="." method="_on_ShopButton2_pressed"]
+[connection signal="pressed" from="Popup/CreditsClose" to="." method="_on_CreditsClose_pressed"]

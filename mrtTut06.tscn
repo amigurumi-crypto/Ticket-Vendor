@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mrt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=2]
+
+[node name="mrt" instance=ExtResource( 1 )]
+
+[node name="not_grid" parent="." index="6"]
+current_location = 12
+
+[node name="Timer" parent="Time_label" index="0"]
+autostart = false
+
+[node name="Win" parent="." index="24"]
+nextStage = "res://Home.tscn"
+
+[node name="Tutorial" parent="." index="25" instance=ExtResource( 2 )]
+dialog = [ "Hello, Welcome
+to the last
+day of your
+training!", "All destinations
+on this line
+have been
+assigned to
+you.", "While previously
+you were always
+assigned to
+NORTH AVENUE
+station,", "this is no
+longer the case.
+You can now
+be assigned
+anywhere.", "Your
+current location
+is indicated
+by red.", "Good Luck,
+and may you
+have a
+fruitful career!" ]
+places = PoolVector2Array( 640, 0, 192, 984, 192, 984, 192, 984, 192, 984, 640, 0 )
+[connection signal="tut_end" from="Tutorial" to="Time_label" method="_on_Tutorial_tut_end"]
